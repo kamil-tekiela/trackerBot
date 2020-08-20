@@ -1,0 +1,8 @@
+
+vendor/**
+logs/**
+json/**
+trash/**
+data/**
+config.ini
+nextRqPossibleAt

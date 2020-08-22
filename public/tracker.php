@@ -9,13 +9,25 @@ include BASE_DIR.'/vendor/autoload.php';
 $dotEnv = new DotEnv();
 $dotEnv->load(BASE_DIR.'/config.ini');
 
+if (!file_exists(BASE_DIR.DIRECTORY_SEPARATOR.'logs')) {
+	mkdir(BASE_DIR.DIRECTORY_SEPARATOR.'logs');
+}
+
+if (!file_exists(BASE_DIR.DIRECTORY_SEPARATOR.'logs'.DIRECTORY_SEPARATOR.'errors')) {
+	mkdir(BASE_DIR.DIRECTORY_SEPARATOR.'logs'.DIRECTORY_SEPARATOR.'errors');
+}
+
+if (!file_exists(BASE_DIR.DIRECTORY_SEPARATOR.'data')) {
+	mkdir(BASE_DIR.DIRECTORY_SEPARATOR.'data');
+}
+
 $client = new GuzzleHttp\Client();
 
 $chatAPI = new ChatAPI($dotEnv);
 
 $stackAPI = new StackAPI($client);
 
-$fetcher = new Tracker\TrackerAPI($stackAPI, $chatAPI, $dotEnv);
+$fetcher = new Tracker\Tracker($stackAPI, $chatAPI, $dotEnv);
 
 if ($searchString) {
 	// if executed from CLI then perform a search instead

@@ -1,6 +1,5 @@
 <?php
 
-use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
 
 class ChatAPI {

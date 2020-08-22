@@ -56,7 +56,7 @@ class NELQAnalyser implements ServicesInterface {
 		$this->chatAPI = $chatAPI;
 
 		$this->reportText = $dotEnv->get('NELQA_report_text');
-		$this->chatrooms = $dotEnv->get('chatrooms');
+		$this->chatrooms = $dotEnv->get('chatrooms')['NELQA'];
 
 		// Say hello
 		foreach ($this->chatrooms as $roomId) {

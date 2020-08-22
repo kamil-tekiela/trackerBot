@@ -3,8 +3,7 @@
 /**
  * Config class - stores all environment variables loaded from config file
  */
-class DotEnv
-{
+class DotEnv {
 	private static $config = [];
 
 	/**
@@ -13,8 +12,7 @@ class DotEnv
 	 * @param string $path
 	 * @return void
 	 */
-	public static function load(string $path)
-	{
+	public static function load(string $path) {
 		// open and parse the config file
 		self::$config = \parse_ini_file($path, true, INI_SCANNER_TYPED);
 		if (!self::$config) {
@@ -28,8 +26,10 @@ class DotEnv
 	 * @param string $key
 	 * @return mixed
 	 */
-	public static function get(string $key)
-	{
-		return self::$config[$key] ?? null;
+	public static function get(string $key) {
+		if (!isset(self::$config[$key])) {
+			throw new \Exception('Missing config variable "'.$key.'"');
+		}
+		return self::$config[$key];
 	}
 }

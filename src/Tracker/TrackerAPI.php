@@ -6,7 +6,7 @@ namespace Tracker;
 
 use Tracker\Services\ServicesInterface;
 
-class TrackerAPI {
+class Tracker {
 	/**
 	 * Timestamp
 	 *
@@ -46,9 +46,6 @@ class TrackerAPI {
 		}
 
 		$this->logRoomId = (int) $dotEnv->get('trackRoomId');
-		if (!$this->logRoomId) {
-			throw new \Exception('Please provide valid room ID!');
-		}
 	}
 
 	/**

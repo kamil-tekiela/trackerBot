@@ -15,19 +15,21 @@ class MysqliTracker implements ServicesInterface {
 	private $chatAPI = null;
 
 	/**
-	 * Chat room to report to
+	 * Chat rooms to report to
 	 *
-	 * @var int
+	 * @var array
 	 */
-	private $logRoomId = null;
+	private $chatrooms = [];
 
 	public function __construct(\ChatAPI $chatAPI, \DotEnv $dotEnv) {
 		$this->chatAPI = $chatAPI;
 
-		$this->logRoomId = (int) $dotEnv->get('trackRoomId');
+		$this->chatrooms = $dotEnv->get('chatrooms')['mysqli'];
 
 		// Say hello
-		$this->chatAPI->sendMessage($this->logRoomId, 'TrackerBot started on '.gethostname());
+		foreach ($this->chatrooms as $roomId) {
+			$this->chatAPI->sendMessage($roomId, 'TrackerBot started on '.gethostname());
+		}
 	}
 
 	/**
@@ -59,7 +61,9 @@ class MysqliTracker implements ServicesInterface {
 			$tags = array_reduce($post->tags, function ($carry, $e) {
 				return $carry."[tag:{$e}] ";
 			});
-			$this->chatAPI->sendMessage($this->logRoomId, $tags.$line." {$post->linkFormatted}".PHP_EOL);
+			foreach ($this->chatrooms as $roomId) {
+				$this->chatAPI->sendMessage($roomId, $tags.$line." {$post->linkFormatted}".PHP_EOL);
+			}
 		}
 	}
 }

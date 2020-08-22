@@ -83,17 +83,6 @@ class StackAPI {
 			throw new Exception("Response is empty");
 		}
 
-		if (stripos($body, 'backoff') !== false) {
-			file_put_contents(BASE_DIR.'/data/data.json', $body);
-		}
-		if (file_exists(BASE_DIR.'/json/json2.json')) {
-			rename(BASE_DIR.'/json/json2.json', BASE_DIR.'/json/json3.json');
-		}
-		if (file_exists(BASE_DIR.'/json/json1.json')) {
-			rename(BASE_DIR.'/json/json1.json', BASE_DIR.'/json/json2.json');
-		}
-		file_put_contents(BASE_DIR.'/json/json1.json', $body);
-
 		$contents = json_decode($body);
 		
 		$this->nextRqPossibleAt = microtime(true);

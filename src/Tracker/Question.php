@@ -77,7 +77,7 @@ class Question {
 		$this->score = $json->score;
 		$this->closed_date = $json->closed_date ?? '';
 		$this->creation_date = date_create_from_format('U', $json->creation_date);
-		$this->link = $json->link;
+		$this->link = 'https://stackoverflow.com/q/'.$json->question_id; // the original link can be too long. Let's use the short notation
 		$this->title = $json->title;
 		$this->body = $json->body;
 		$this->owner = $json->owner;

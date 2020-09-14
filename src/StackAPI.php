@@ -15,7 +15,7 @@ class StackAPI {
 	/**
 	 * My app key. Not secret
 	 */
-	private const APP_KEY = 'gS)WzUg0j7Q5ZVEBB5Onkw((';
+	private const APP_KEY = 'KU)9*jHmdv28q21fadYYVg((';
 
 	/**
 	 * Name of the persistant storage file for the timestamp $nextRqPossibleAt

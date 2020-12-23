@@ -40,7 +40,7 @@ class Tracker {
 	public function __construct(\StackAPI $stackAPI, \ChatAPI $chatAPI, \DotEnv $dotEnv) {
 		$this->chatAPI = $chatAPI;
 		$this->stackAPI = $stackAPI;
-		
+
 		if (!$this->lastRequestTime) {
 			$this->lastRequestTime = strtotime('15 minutes ago');
 		}

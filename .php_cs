@@ -1,10 +1,9 @@
 <?php
 /*
  * This document has been generated with
- * https://mlocati.github.io/php-cs-fixer-configurator/?version=2.14#configurator
+ * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.17.2|configurator
  * you can change this configuration by importing this file.
  */
-
 return PhpCsFixer\Config::create()
     ->setIndent("\t")
     ->setRules([
@@ -12,7 +11,7 @@ return PhpCsFixer\Config::create()
         'binary_operator_spaces' => true,
         'blank_line_after_namespace' => true,
         'blank_line_after_opening_tag' => true,
-        'braces' => ['allow_single_line_closure' => true, 'position_after_functions_and_oop_constructs' => 'same'],
+        'braces' => ['allow_single_line_closure'=>true,'position_after_functions_and_oop_constructs'=>'same'],
         'cast_spaces' => true,
         'class_attributes_separation' => true,
         'class_definition' => true,
@@ -33,7 +32,7 @@ return PhpCsFixer\Config::create()
         'lowercase_static_reference' => true,
         'magic_constant_casing' => true,
         'magic_method_casing' => true,
-        'method_argument_space' => ['on_multiline' => 'ensure_fully_multiline'],
+        'method_argument_space' => ['on_multiline'=>'ensure_fully_multiline'],
         'method_chaining_indentation' => true,
         'multiline_whitespace_before_semicolons' => true,
         'native_function_casing' => true,
@@ -56,6 +55,7 @@ return PhpCsFixer\Config::create()
         'no_trailing_whitespace_in_comment' => true,
         'no_unneeded_control_parentheses' => true,
         'no_whitespace_before_comma_in_array' => true,
+        'no_whitespace_in_blank_line' => true,
         'normalize_index_brace' => true,
         'object_operator_without_whitespace' => true,
         'return_type_declaration' => true,
@@ -66,6 +66,7 @@ return PhpCsFixer\Config::create()
         'ternary_operator_spaces' => true,
         'trim_array_spaces' => true,
         'unary_operator_spaces' => true,
+        'visibility_required' => true,
         'whitespace_after_comma_in_array' => true,
     ])
     ->setFinder(PhpCsFixer\Finder::create()

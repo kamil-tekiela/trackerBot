@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ef6a88cf1a3ae35bb9d5a4832033001",
+    "content-hash": "f7a91854e6d7cb58306f63b53ea248b4",
     "packages": [
         {
             "name": "dharman/stackapi",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kamil-tekiela/StackAPI.git",
@@ -24,7 +24,6 @@
                 "guzzlehttp/guzzle": "^7",
                 "php": "^7.3"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -44,7 +43,7 @@
             "description": "An API for PHP to connect to Stack Overflow",
             "support": {
                 "issues": "https://github.com/kamil-tekiela/StackAPI/issues",
-                "source": "https://github.com/kamil-tekiela/StackAPI/tree/master"
+                "source": "https://github.com/kamil-tekiela/StackAPI/tree/v1.0"
             },
             "time": "2020-12-24T01:07:21+00:00"
         },
@@ -433,9 +432,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "dharman/stackapi": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

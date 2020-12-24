@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tracker\Services;
 
+use Dharman\ChatAPI;
 use Tracker\Question;
 
 class MysqliTracker implements ServicesInterface {
@@ -21,7 +22,7 @@ class MysqliTracker implements ServicesInterface {
 	 */
 	private $chatrooms = [];
 
-	public function __construct(\ChatAPI $chatAPI, \DotEnv $dotEnv) {
+	public function __construct(ChatAPI $chatAPI, \DotEnv $dotEnv) {
 		$this->chatAPI = $chatAPI;
 
 		$this->chatrooms = $dotEnv->get('chatrooms')['mysqli'];

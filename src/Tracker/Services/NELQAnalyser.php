@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tracker\Services;
 
+use Dharman\ChatAPI;
 use Tracker\Question;
 
 class NELQAnalyser implements ServicesInterface {
@@ -52,7 +53,7 @@ class NELQAnalyser implements ServicesInterface {
 		'tr' => 'Turkish',
 	];
 
-	public function __construct(\ChatAPI $chatAPI, \DotEnv $dotEnv) {
+	public function __construct(ChatAPI $chatAPI, \DotEnv $dotEnv) {
 		$this->chatAPI = $chatAPI;
 
 		$this->reportText = $dotEnv->get('NELQA_report_text');

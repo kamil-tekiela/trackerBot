@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tracker;
 
+use Dharman\ChatAPI;
+use Dharman\StackAPI;
 use Tracker\Services\ServicesInterface;
 
 class Tracker {
@@ -30,6 +32,8 @@ class Tracker {
 
 	private $logRoomId = null;
 
+	private $app_key = null;
+
 	/**
 	 * Runnable services which will be executed for each question
 	 *
@@ -37,7 +41,7 @@ class Tracker {
 	 */
 	private $services = [];
 
-	public function __construct(\StackAPI $stackAPI, \ChatAPI $chatAPI, \DotEnv $dotEnv) {
+	public function __construct(StackAPI $stackAPI, ChatAPI $chatAPI, \DotEnv $dotEnv) {
 		$this->chatAPI = $chatAPI;
 		$this->stackAPI = $stackAPI;
 
@@ -46,6 +50,7 @@ class Tracker {
 		}
 
 		$this->logRoomId = (int) $dotEnv->get('trackRoomId');
+		$this->app_key = $dotEnv->get('app_key');
 	}
 
 	/**
@@ -58,6 +63,7 @@ class Tracker {
 		$url = "https://api.stackexchange.com/2.2/" . $apiEndpoint;
 
 		$args = [
+			'key' => $this->app_key,
 			'todate' => strtotime('2 minutes ago'),
 			'site' => 'stackoverflow',
 			'order' => 'asc',
@@ -104,7 +110,9 @@ class Tracker {
 		$apiEndpoint = 'search/advanced';
 		$url = "https://api.stackexchange.com/2.2/" . $apiEndpoint;
 
+		$this->lastRequestTime = 0;
 		$args = [
+			'key' => $this->app_key,
 			'todate' => strtotime('2 minutes ago'),
 			'site' => 'stackoverflow',
 			'order' => 'asc',
@@ -112,7 +120,7 @@ class Tracker {
 			'pagesize' => '100',
 			'page' => '1',
 			'filter' => '7yrx3gca',
-			'fromdate' => 0,
+			'fromdate' => $this->lastRequestTime,
 			'q' => $searchString,
 			'closed' => 'False',
 		];

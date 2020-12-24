@@ -1,5 +1,8 @@
 <?php
 
+use Dharman\ChatAPI;
+use Dharman\StackAPI;
+
 $searchString = $argv[2] ?? null;
 define('DEBUG', isset($argv[1]) && $argv[1] == 1);
 define('BASE_DIR', realpath(__DIR__.'/..'));
@@ -23,7 +26,7 @@ if (!file_exists(BASE_DIR.DIRECTORY_SEPARATOR.'data')) {
 
 $client = new GuzzleHttp\Client();
 
-$chatAPI = new ChatAPI($dotEnv);
+$chatAPI = new ChatAPI($dotEnv->get('chatUserEmail'), $dotEnv->get('chatUserPassword'), BASE_DIR.'/data/chatAPI_cookies.json');
 
 $stackAPI = new StackAPI($client);
 

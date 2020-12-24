@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "045658d81f6d9d3243e731dda7bf04d1",
+    "content-hash": "7ef6a88cf1a3ae35bb9d5a4832033001",
     "packages": [
+        {
+            "name": "dharman/stackapi",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kamil-tekiela/StackAPI.git",
+                "reference": "c821fc2094f65f4ecb85b001b3eabff09056347b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kamil-tekiela/StackAPI/zipball/c821fc2094f65f4ecb85b001b3eabff09056347b",
+                "reference": "c821fc2094f65f4ecb85b001b3eabff09056347b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7",
+                "php": "^7.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dharman\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dharman",
+                    "email": "tekiela246@gmail.com"
+                }
+            ],
+            "description": "An API for PHP to connect to Stack Overflow",
+            "support": {
+                "issues": "https://github.com/kamil-tekiela/StackAPI/issues",
+                "source": "https://github.com/kamil-tekiela/StackAPI/tree/master"
+            },
+            "time": "2020-12-24T01:07:21+00:00"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "7.2.0",
@@ -391,7 +433,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "dharman/stackapi": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

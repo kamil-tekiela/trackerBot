@@ -6,3 +6,4 @@ trash/**
 data/**
 config.ini
 nextRqPossibleAt
+composer.lock

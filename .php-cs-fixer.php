@@ -1,10 +1,11 @@
 <?php
 /*
  * This document has been generated with
- * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.17.2|configurator
+ * https://mlocati.github.io/php-cs-fixer-configurator/#version:3.0.0|configurator
  * you can change this configuration by importing this file.
  */
-return PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+return $config
     ->setIndent("\t")
     ->setRules([
         'array_indentation' => true,
@@ -13,9 +14,10 @@ return PhpCsFixer\Config::create()
         'blank_line_after_opening_tag' => true,
         'braces' => ['allow_single_line_closure'=>true,'position_after_functions_and_oop_constructs'=>'same'],
         'cast_spaces' => true,
-        'class_attributes_separation' => true,
+        'class_attributes_separation' => ['elements'=>['const'=>'none','method'=>'one','property'=>'none']],
         'class_definition' => true,
         'compact_nullable_typehint' => true,
+        'constant_case' => true,
         'declare_equal_normalize' => true,
         'elseif' => true,
         'encoding' => true,
@@ -27,7 +29,6 @@ return PhpCsFixer\Config::create()
         'line_ending' => true,
         'linebreak_after_opening_tag' => true,
         'lowercase_cast' => true,
-        'lowercase_constants' => true,
         'lowercase_keywords' => true,
         'lowercase_static_reference' => true,
         'magic_constant_casing' => true,

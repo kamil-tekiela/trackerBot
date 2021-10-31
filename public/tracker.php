@@ -41,6 +41,7 @@ if ($searchString) {
 // register services
 $fetcher->registerService(new Tracker\Services\MysqliTracker($chatAPI, $dotEnv));
 $fetcher->registerService(new Tracker\Services\NELQAnalyser($chatAPI, $dotEnv));
+$fetcher->registerService(new Tracker\Services\DharmanTracker($chatAPI, $dotEnv));
 
 // watch new questions constantly
 $failedTries = 0;

@@ -29,7 +29,7 @@ class DharmanTracker implements ServicesInterface {
 
 		// Say hello
 		foreach ($this->chatrooms as $roomId) {
-			$this->chatAPI->sendMessage($roomId, 'TrackerBot started on '.gethostname());
+			$this->chatAPI->sendMessage($roomId, 'Dharman Tracker started on '.gethostname());
 		}
 	}
 

@@ -99,7 +99,7 @@ class NELQAnalyser implements ServicesInterface {
 			'fr' => 'Bonjour|j\'ai|Merci|problème|Aidez(?:-| )moi|s\'il vous plaît|\baider\b|\bje\b|Erreur|\bavec\b|\bmoi\b|\bsais\b|\bdeux\b|J\'aimerai|\bune\b|j\'essaye|\bvous\b|\bavons\b|création|\bvotre\b|voudrais|\bavoir\b|besoin|données|toutes|tableur|connais|veux|nombre|utilisateur|Créé|ajouter|était|C\'est',
 			'id' => 'Tolong|Selamat|masalah|bagaimana|\bkapan\b|\bsaya\b|\bsudah\b|Terima kasih|\bjual\b|\bobat\b', //indonesian
 			'vi' => 'cảm|ơn|Tôi|có|chào|với|giúp|đó|lệnh|lỗi|này|mình|làm|nào|ngày|có|thể|nhỏ|tốt', // vietnamese
-			'it' => 'per favore|\baiuto\b|aiutami|Buon\hgiorno|buona serata|io ho|domanda|\bpagina\b|soluzione|tutti|tutto|lo stesso|salve|Grazie|provato|cercando|funziona', // italian
+			'it' => 'per favore|\baiuto\b|aiutami|Buon\hgiorno|buona serata|io ho|domanda|\bpagina\b|soluzione|tutt(?:i|o)|lo stesso|salve|Grazie|provato|cercando|funziona|questo|messaggi|di errore|l\'errore|codice|quando|usare|più|\bche\b', // italian
 			'th' => '\p{Thai}{3,}',
 			'tr' => 'içine|olucak|sayfası|değişken|oluşturudum|kalmıyor|gün|içinde|siliniyor|oluşturup|çıkıyor|istediğim|Sahibim|ihtiyacım|ihtiyaç|Teşekkür(?:ler)?|Merhaba|Günaydın|Nasıl|ne zaman|\bhata\b|calismiyor|kodlari?|verip|lütfen|Yardım|arkadaşlar|oluştu|herşey|calışmıyor|olmadı|yaptım', // turkish
 		];

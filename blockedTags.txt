@@ -53,3 +53,5 @@ tags
 stack-overflow
 meta
 networking
+bitcoin
+cryptocurrency

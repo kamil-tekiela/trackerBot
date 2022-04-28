@@ -7,7 +7,7 @@ namespace Tracker\Services;
 use Dharman\ChatAPI;
 use Tracker\Question;
 
-class DharmanTracker implements ServicesInterface {
+class BlacklistedTags implements ServicesInterface {
 	/**
 	 * Chat API to talk in the chat
 	 *
@@ -25,11 +25,11 @@ class DharmanTracker implements ServicesInterface {
 	public function __construct(ChatAPI $chatAPI, \DotEnv $dotEnv) {
 		$this->chatAPI = $chatAPI;
 
-		$this->chatrooms = $dotEnv->get('chatrooms')['dharman'];
+		$this->chatrooms = $dotEnv->get('chatrooms')['blockedTags'];
 
 		// Say hello
 		foreach ($this->chatrooms as $roomId) {
-			$this->chatAPI->sendMessage($roomId, 'Dharman Tracker started on '.gethostname());
+			$this->chatAPI->sendMessage($roomId, 'Blacklisted Tags Tracker started on '.gethostname());
 		}
 	}
 
@@ -40,9 +40,11 @@ class DharmanTracker implements ServicesInterface {
 	 * @return void
 	 */
 	public function execute(Question $post): void {
-		// Our rules
 		$line = '';
-		if (stripos($post->bodyWithTitle, 'dharman') !== false) {
+
+		$blacklistedTags = file(BASE_DIR.'/blockedTags.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+		if (array_diff($post->tags, $blacklistedTags) === []) {
 			$line = "@Dharman";
 		}
 

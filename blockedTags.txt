@@ -20,6 +20,7 @@ centos
 kali-linux
 web-applications
 web-frameworks
+web-site-project
 hotspot
 tethering
 iptables
@@ -55,3 +56,16 @@ meta
 networking
 bitcoin
 cryptocurrency
+google-search
+search-engine
+webserver
+cdn
+time-management
+payment
+computer-science
+data-science
+bioinformatics
+economics
+camera
+uitableview
+validation

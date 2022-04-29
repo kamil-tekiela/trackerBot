@@ -1,4 +1,5 @@
 api
+architecture
 audio
 backend
 bioinformatics
@@ -7,6 +8,7 @@ boot
 camera
 cdn
 centos
+citations
 cloud-hosting
 components
 computer-science
@@ -38,10 +40,12 @@ meta
 networking
 open-source
 optimization
+organization
 overheating
 payment
 performance
 printers
+project
 project-management
 search-engine
 self-hosting
@@ -56,6 +60,7 @@ tags
 testing
 tethering
 time-management
+tracker
 ubuntu
 uitableview
 url

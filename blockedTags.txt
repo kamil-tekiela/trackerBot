@@ -31,13 +31,17 @@ hyperlink
 ifconfig
 image
 installation
+iphone
 iptables
 kali-linux
 licensing
 linux
+list
+macos
 math
 meta
 networking
+nft
 open-source
 optimization
 organization
@@ -57,6 +61,7 @@ shared-hosting
 solid-state-drive
 stack-overflow
 symbols
+synchronization
 tags
 testing
 tethering

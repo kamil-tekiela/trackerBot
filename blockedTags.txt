@@ -51,6 +51,7 @@ service
 shared-hosting
 solid-state-drive
 stack-overflow
+symbols
 tags
 testing
 tethering
@@ -69,3 +70,4 @@ web-site-project
 web-technologies
 wifi
 windows
+writing

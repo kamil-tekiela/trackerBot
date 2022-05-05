@@ -45,7 +45,7 @@ class BlacklistedTags implements ServicesInterface {
 		$blacklistedTags = file(BASE_DIR.'/blockedTags.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 		if (array_diff($post->tags, $blacklistedTags) === []) {
-			$line = "@Dharman";
+			$line = implode(' ', array_map(fn ($text) => '[tag:'.$text.']', $post->tags));
 		}
 
 		if ($line) {

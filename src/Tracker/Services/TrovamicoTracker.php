@@ -42,7 +42,7 @@ class TrovamicoTracker implements ServicesInterface {
 	public function execute(Question $post): void {
 		// Our rules
 		$line = '';
-		if (preg_match('#(?:Trovamico|epdragon|FirebaseDatabase\.getInstance\(\)\.getReference\("Users"\))#i', $post->bodyWithTitle)) {
+		if (preg_match('#(?:Trovamico|ChatsFragment|epdragon|FirebaseDatabase\.getInstance\(\)\.getReference\("Users"\))#i', $post->bodyWithTitle)) {
 			$line = "@Dharman [Bubino](https://stackoverflow.com/users/12700297/bubino) is back. ";
 		}
 

@@ -51,6 +51,7 @@ class NELQAnalyser implements ServicesInterface {
 		'te' => 'Telugu',
 		'th' => 'Thai',
 		'tr' => 'Turkish',
+		'de' => 'German',
 	];
 
 	public function __construct(ChatAPI $chatAPI, \DotEnv $dotEnv) {
@@ -102,6 +103,7 @@ class NELQAnalyser implements ServicesInterface {
 			'it' => 'per favore|\baiuto\b|aiutami|Buon\hgiorno|buona serata|io ho|domanda|\bpagina\b|soluzione|tutt(?:i|o)|lo stesso|salve|Grazie|provato|cercando|funziona|questo|messaggi|di errore|l\'errore|codice|quando|usare|più|\bche\b|aiuto|quanto|bisogno|linguaggio|colonne|possa|partire|nell\'', // italian
 			'th' => '\p{Thai}{3,}',
 			'tr' => 'içine|olucak|sayfası|değişken|oluşturudum|kalmıyor|gün|içinde|siliniyor|oluşturup|çıkıyor|istediğim|Sahibim|ihtiyacım|ihtiyaç|Teşekkür(?:ler)?|Merhaba|Günaydın|Nasıl|ne zaman|\bhata\b|calismiyor|kodlari?|verip|lütfen|Yardım|arkadaşlar|oluştu|herşey|calışmıyor|olmadı|yaptım', // turkish
+			'de' => '\bich\b|\bhabe\b|\bder\b|\bnicht\b|\bdas\b|jetzt|heute|\bund\b|\bmein\b|\bist\b|\beinen\b', // German
 		];
 
 		foreach ($langKeywords as $lang => $keywords) {

@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 $restart = isset($_GET['restart']);
 $stop = isset($_GET['stop']);
 
-exec('ps -eaf | grep \'[p]hp74 tracker.php\' | awk \'{print $2}\'', $out);
+exec('ps -eaf | grep \'[p]hp tracker.php\' | awk \'{print $2}\'', $out);
 foreach($out as $pid){
 	if($restart || $stop) {
 		exec("kill -9 $pid");
@@ -23,7 +23,7 @@ if($out && !$restart){
 }
 
 // chdir('../../trackerBot/public');
-passthru('php74 tracker.php > trackerout.txt 2>trackerout.txt & ', $ret);
+passthru('php tracker.php > trackerout.txt 2>trackerout.txt & ', $ret);
 
 var_dump($ret);
 
